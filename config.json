@@ -1,0 +1,38 @@
+{
+  "max_string_length": 400,
+  "string_chunk_size": 120,
+  "line_ending": "LF",
+  "tab_size": 4,
+  "convert_tabs_to_spaces": true,
+  "trim_trailing_spaces": true,
+  "remove_invisible_characters": true,
+  "ignored_directories": [
+    ".git",
+    ".vs",
+    "bin",
+    "obj",
+    ".cache",
+    "__pycache__"
+  ],
+  "cleanup_directories": [
+    ".vs",
+    "bin",
+    "obj",
+    ".cache"
+  ],
+  "cleanup_extensions": [
+    ".tmp",
+    ".bak"
+  ],
+  "max_log_file_mb": 10,
+  "generated_file_patterns": [
+    ".designer.cs",
+    ".g.cs",
+    ".generated.cs"
+  ],
+  "detect_get_file_loop_window": 30,
+  "detect_get_file_loop_threshold": 10,
+  "enable_optional_split_large_files": false,
+  "large_file_threshold_mb": 2,
+  "large_file_chunk_lines": 2000
+}
