@@ -31,6 +31,22 @@ TEXT_EXTENSIONS = {
     ".targets",
 }
 
+STRING_SPLIT_EXTENSIONS = {
+    ".py",
+    ".cs",
+    ".js",
+    ".ts",
+    ".tsx",
+    ".jsx",
+    ".java",
+    ".go",
+    ".rs",
+    ".cpp",
+    ".c",
+    ".h",
+    ".hpp",
+}
+
 
 class LoopDetector:
     def __init__(self, state_file: Path, window: int, threshold: int) -> None:
@@ -152,7 +168,7 @@ def run(root: Path, config_path: Path) -> dict:
         text = sanitize_result.text
         actions.extend(sanitize_result.actions)
 
-        if path.suffix.lower() in {".py", ".cs", ".js", ".ts", ".tsx", ".jsx", ".java", ".go", ".rs", ".cpp", ".c", ".h", ".hpp"}:
+        if path.suffix.lower() in STRING_SPLIT_EXTENSIONS:
             split_result = split_long_strings(
                 text,
                 max_length=int(config.get("max_string_length", 400)),
@@ -217,4 +233,3 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
-

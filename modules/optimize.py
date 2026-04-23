@@ -16,8 +16,7 @@ def split_large_file(path: Path, chunk_lines: int) -> list[Path]:
     chunks: list[Path] = []
     base = path.with_suffix(path.suffix + ".part")
     for idx in range(0, len(lines), chunk_lines):
-        target = base.with_name(f"{base.name}{idx // chunk_lines + 1}")
+        target = base.with_name(f"{base.name}.{idx // chunk_lines + 1}")
         target.write_text("".join(lines[idx:idx + chunk_lines]), encoding="utf-8")
         chunks.append(target)
     return chunks
-
